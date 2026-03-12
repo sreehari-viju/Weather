@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1>Weather Forecast</h1>
+            <button id="location-btn" class="glass-btn" aria-label="Use My Location">
+                <i data-lucide="map-pin"></i> Use My Location
+            </button>
+        </header>
+
+        <main class="weather-card glass">
+            <div id="loading" class="loading">
+                <i data-lucide="loader-2" class="spinner"></i>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <div id="weather-content" class="weather-content hidden">
+                <div class="location-info">
+                    <h2 id="city-name">Kerala</h2>
+                    <p id="date-time">Today</p>
+                </div>
+
+                <div class="current-weather">
+                    <div class="temp-section">
+                        <h1 id="temperature">--°</h1>
+                        <p id="condition">Loading...</p>
+                    </div>
+                    <div class="weather-icon" id="main-icon">
+                        <i data-lucide="cloud"></i>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i data-lucide="wind"></i>
+                        <div>
+                            <p class="label">Wind</p>
+                            <p id="wind-speed" class="value">-- km/h</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i data-lucide="droplets"></i>
+                        <div>
+                            <p class="label">Humidity</p>
+                            <p id="humidity" class="value">-- %</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i data-lucide="thermometer"></i>
+                        <div>
+                            <p class="label">Feels Like</p>
+                            <p id="feels-like" class="value">--°</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="forecast">
+                    <h3>7-Day Forecast</h3>
+                    <div class="forecast-list" id="forecast-list">
+                        <!-- Forecast items will be injected here via JS -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="error-message" class="error-message hidden">
+                <i data-lucide="alert-circle"></i>
+                <p id="error-text">Could not load weather data.</p>
+                <button id="retry-btn" class="glass-btn sm">Retry</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
